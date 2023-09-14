@@ -1,8 +1,3 @@
----
-layout: redirect
-sitemap_exclude: true
-redirect: "/src/index"
----
 
 # Getting Started with Create React App
 
