@@ -1,9 +1,9 @@
 import { Container } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
-import PageRoutes from '../../PageRoutes';
-import AppHeader from '../../components/AppHeader';
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { noBackButton, selectBackButton, selectLoggedInUser, yesBackButton } from './AppSlice';
+import PageRoutes from './PageRoutes';
+import AppHeader from './components/AppHeader';
+import { useAppDispatch, useAppSelector } from './store/hooks';
+import { noBackButton, selectBackButton, selectLoggedInUser, yesBackButton } from './features/app/AppSlice';
 import { useEffect } from 'react';
 
 function App() {
