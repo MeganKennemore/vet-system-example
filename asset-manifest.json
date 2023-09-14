@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/vet-system-example/static/css/main.073c9b0a.css",
+    "main.js": "/vet-system-example/static/js/main.8238af7b.js",
+    "static/js/787.e1d42eaa.chunk.js": "/vet-system-example/static/js/787.e1d42eaa.chunk.js",
+    "static/media/logo.svg": "/vet-system-example/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/vet-system-example/index.html",
+    "main.073c9b0a.css.map": "/vet-system-example/static/css/main.073c9b0a.css.map",
+    "main.8238af7b.js.map": "/vet-system-example/static/js/main.8238af7b.js.map",
+    "787.e1d42eaa.chunk.js.map": "/vet-system-example/static/js/787.e1d42eaa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.8238af7b.js"
+  ]
+}
