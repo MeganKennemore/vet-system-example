@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import { CssBaseline } from '@mui/material';
 import { Provider } from 'react-redux';
 import './index.css';
-import App from './features/app/App';
+import App from './App';
 import storeItems from './store/store';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
