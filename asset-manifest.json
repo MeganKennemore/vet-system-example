@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/vet-system-example/static/css/main.073c9b0a.css",
-    "main.js": "/vet-system-example/static/js/main.8238af7b.js",
+    "main.css": "/vet-system-example/static/css/main.2924db93.css",
+    "main.js": "/vet-system-example/static/js/main.58111050.js",
     "static/js/787.e1d42eaa.chunk.js": "/vet-system-example/static/js/787.e1d42eaa.chunk.js",
-    "static/media/logo.svg": "/vet-system-example/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/pawprint_1887455.png": "/vet-system-example/static/media/pawprint_1887455.3d005085ed961240f8ed.png",
+    "static/media/cat_2203926.png": "/vet-system-example/static/media/cat_2203926.e309ae17541f69f9b879.png",
+    "static/media/dog_1887531.png": "/vet-system-example/static/media/dog_1887531.e155b4b4e4d5544a7aae.png",
     "index.html": "/vet-system-example/index.html",
-    "main.073c9b0a.css.map": "/vet-system-example/static/css/main.073c9b0a.css.map",
-    "main.8238af7b.js.map": "/vet-system-example/static/js/main.8238af7b.js.map",
+    "main.2924db93.css.map": "/vet-system-example/static/css/main.2924db93.css.map",
+    "main.58111050.js.map": "/vet-system-example/static/js/main.58111050.js.map",
     "787.e1d42eaa.chunk.js.map": "/vet-system-example/static/js/787.e1d42eaa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.8238af7b.js"
+    "static/css/main.2924db93.css",
+    "static/js/main.58111050.js"
   ]
 }
