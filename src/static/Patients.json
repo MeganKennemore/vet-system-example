@@ -1,0 +1,263 @@
+[
+    {
+        "patient_id": "001",
+        "species": "dog",
+        "patient_name": "Kiwi",
+        "sex": "Female",
+        "intact": "Fixed",
+        "owner_primary": {
+            "owner_id": "owner001",
+            "first_name": "Megan",
+            "last_name": "Kennemore",
+            "phone_one": "6789385680",
+            "email": "megkennemore@gmail.com"
+        },
+        "records": {
+          "patient_id": "001",
+          "appt_record": [
+            {
+                "id": "M61934946",
+                "type": "Exam",
+                "subtype": "Pre Adoption",
+                "date": "2021-05-19T12:18:00.000Z",
+                "notes": "Presumed to be spayed per Dr. Kooyman. Scar consistent with spay. If animal shows signs of heat, please contact the Atlanta Humane Society.\n\nBAR on exam. BCS 5/9. MM pink, moist. CRT> 2sec. Oral exam brief, unremarkable. EEN clean and free of discharge.\nCardiothoracic auscultation wnl. Abdomen soft, non-painful. PLN wnl. Integument wnl\n\nRV RR",
+                "patient_id": "001"
+            },
+            {
+                "id": "M61928226",
+                "type": "Exam",
+                "subtype": "Processing",
+                "date": "2021-05-18T19:43:00.000Z",
+                "review_date": "2021-06-01T19:43:00.000Z",
+                "vitals": "34.00 pound",
+                "notes": "PROCESSING EXAM\n\nEYES: NORMAL_x___ DISCHARGE____ CLOUDY____ ULCERS____ CHERRY EYE____\n\nNOSE: NORMAL_x___ DISCHARGE____ CLEAR____\n\nSKIN: NORMAL_x___ HAIR LOSS____ PUSTULES____ FLEAS/TICKS____ MASS____\n\nBODY: NORMAL_x___ THIN____ OVERWEIGHT____ POSSIBLY PREGNANT____ DEFORMITY____\n\nEARS: NORMAL__x__ DIRTY____ ABNORMAL____ INFECTED____ MITES____\n\nMOUTH: NORMAL__x__ RETAINED____ ULCERS____ TARTAR___",
+                "patient_id": "001"
+            }
+          ],
+          "tests": [{
+            "test_name": "Heartworm Snap Test, Canine",
+            "test_for_condition": "Heartworm",
+            "result": "Negative",
+            "test_date": "2021-05-20T12:38:45.000Z",
+            "result_date": "2021-05-20T12:38:45.000Z",
+            "re_test_date": "2021-11-20T13:38:00.000Z",
+            "test_id": "34a5c736-4e80-11ee-be56-0242ac120002",
+            "appt_id": "M61928226",
+            "patient_id": "001"
+          }],
+          "vaccinations": [
+            {
+              "vaccination_name": "DA2PP16w+ #2",
+              "type": "Modified Live",
+              "vac_date": "2021-06-04T04:00:00.000Z",
+              "re_vac_date": "2022-06-04T04:00:00.000Z",
+              "vac_id": "7c6d3936-4f7b-11ee-be56-0242ac120002",
+              "appt_id": "M61928226",
+               "patient_id": "001"
+            },
+            {
+              "vaccination_name": "Rabies, 1 yr adopt",
+              "type": "Killed",
+              "vac_date": " 2021-05-19T12:18:00.000Z",
+              "re_vac_date": "2022-05-19T12:18:00.000Z",
+              "lot_number": "",
+              "vac_id": "7c6d3c1a-4f7b-11ee-be56-0242ac120002",
+              "appt_id": "M61928226",
+               "patient_id": "001"
+            },
+            {
+              "vaccination_name": "*Bordetella, Canine",
+              "type": "Modified Live",
+              "vac_date": "2021-05-18T19:43:00.000Z",
+              "re_vac_date": "2021-11-18T20:43:00.000Z",
+              "lot_number": "",
+              "vac_id": "7c6d3d64-4f7b-11ee-be56-0242ac120002",
+              "appt_id": "M61928226",
+               "patient_id": "001"
+            },
+            {
+              "vaccination_name": "DA2PP16w+ #1",
+              "type": "Modified Live",
+              "vac_date": "2021-05-18T19:43:00.000Z",
+              "re_vac_date": "2021-06-01T19:43:00.000Z ",
+              "lot_number": "",
+              "vac_id": "7c6d3eb8-4f7b-11ee-be56-0242ac120002",
+              "appt_id": "M61928226",
+              "patient_id": "001"
+            }
+          ],
+          "medical_care": [
+            {
+              "care": "*Panacur Liquid - Dewormer#2",
+              "type": "Medication",
+              "doses_or_recurrences": "1 app / 1 x's every 1 day(s) for 3 Days (3 of 3)",
+              "care_date": "2021-06-10T11:00:00.000Z",
+              "care_id": "9851750e-4f7b-11ee-be56-0242ac120002",
+              "appt_id": "M61928226",
+              "patient_id": "001"
+            },
+            {
+              "care": "*Panacur Liquid - Dewormer#2",
+              "type": "Medication",
+              "doses_or_recurrences": "1 app / 1 x's every 1 day(s) for 3 Days (2 of 3)",
+              "care_date": " 2021-06-09T11:00:00.000Z",
+              "care_id": "98517806-4f7b-11ee-be56-0242ac120002",
+              "appt_id": "M61928226",
+              "patient_id": "001"
+            },
+            {
+              "care": "*Panacur Liquid - Dewormer#2",
+              "type": "Medication",
+              "doses_or_recurrences": "1 app / 1 x's every 1 day(s) for 3 Days (1 of 3)",
+              "care_date": "2021-06-08T19:43:00.000Z",
+              "care_id": "985179aa-4f7b-11ee-be56-0242ac120002",
+              "appt_id": "M61928226",
+              "patient_id": "001"
+            },
+            {
+              "care": "*Panacur Liquid - Dewormer#1",
+              "type": "Medication",
+              "doses_or_recurrences": "7.50 mL / 1 x's every 1 day(s) for 3 Days (3 of 3)",
+              "care_date": " 2021-05-20T13:41:13.000Z",
+              "care_id": "98517b26-4f7b-11ee-be56-0242ac120002",
+              "appt_id": "M61928226",
+              "patient_id": "001"
+            },
+            {
+              "care": "*Panacur Liquid - Dewormer#1",
+              "type": "Medication",
+              "doses_or_recurrences": "7.50 mL / 12021-05-19T21:56:11.000Z x's every 1 day(s) for 3 Days (2 of 3)",
+              "care_date": "2021-05-19T21:56:11.000Z",
+              "review_date": "2021-06-09T21:56:00.000Z",
+              "care_id": "98517c5c-4f7b-11ee-be56-0242ac120002",
+              "appt_id": "M61928226",
+              "patient_id": "001"
+            },
+            {
+              "care": "*Panacur Liquid - Dewormer#1",
+              "type": "Medication",
+              "doses_or_recurrences": "7.50 mL / 1 x's every 1 day(s) for 3 Days (1 of 3)",
+              "care_date": "2021-05-18T19:43:00.000Z",
+              "review_date": "2021-06-08T19:43:00.000Z",
+              "care_id": "98517dec-4f7b-11ee-be56-0242ac120002",
+              "appt_id": "M61928226",
+              "patient_id": "001"
+            },
+            {
+              "care": "*Heartgard Plus Chew 26-50 GRN",
+              "type": "Medication",
+              "doses_or_recurrences": "1 tablet",
+              "care_date": "2021-05-18T19:43:00.000Z",
+              "review_date": "2021-06-17T19:43:00.000Z",
+              "care_id": "98517f4a-4f7b-11ee-be56-0242ac120002",
+              "appt_id": "M61928226",
+              "patient_id": "001"
+            },
+            {
+              "care": "*NexGard 24.1 - 60 Pounds",
+              "type": "Medication",
+              "doses_or_recurrences": "1 tablet",
+              "for": "",
+              "care_date": "2021-05-18T19:43:00.000Z",
+              "review_date": "2021-06-17T19:43:00.000Z",
+              "care_id": "985180a8-4f7b-11ee-be56-0242ac120002",
+              "appt_id": "M61928226",
+              "patient_id": "001"
+            }
+          ]
+        },
+        "notes": "Sweetheart. Seasonal allergies, chicken allergy. Has had a TPLO surgery and subsequent physical therapy. Missing 3 teeth. Owner always has her wear bows on her collar.",
+        "birthdate": "May 18, 2019",
+        "breed": "ABPT mix",
+        "warnings": []
+    },
+    {
+        "patient_id": "002",
+        "species": "cat",
+        "patient_name": "Queso",
+        "sex": "Male",
+        "intact": "Fixed",
+        "owner_primary": {
+            "owner_id": "owner002",
+            "first_name": "Pam",
+            "last_name": "Kennemore",
+            "phone_one": "4045555555",
+            "email": "example_email@gmail.com"
+        },
+        "owner_secondary": {
+            "owner_id": "owner001",
+            "first_name": "Megan",
+            "last_name": "Kennemore",
+            "phone_one": "6789385680",
+            "email": "megkennemore@gmail.com"
+        },
+        "records": {
+            "patient_id": "002",
+            "appt_record": [],
+            "tests": [],
+            "vaccinations": [],
+            "medical_care": []
+        },
+        "notes": "Good boy, very vocal, good for re-crating. Known to eat ribbons/strings, has had foreign object removal.",
+        "birthdate": "December 1, 2012",
+        "breed": "American shorthair",
+        "warnings": []
+    },
+    {
+        "patient_id": "003",
+        "species": "cat",
+        "patient_name": "Olive",
+        "sex": "Female",
+        "intact": "Fixed",
+        "owner_primary": {
+            "owner_id": "owner002",
+            "first_name": "Pam",
+            "last_name": "Kennemore",
+            "phone_one": "4045555555",
+            "email": "example_email@gmail.com"
+        },
+        "owner_secondary": {
+            "owner_id": "owner001",
+            "first_name": "Megan",
+            "last_name": "Kennemore",
+            "phone_one": "6789385680",
+            "email": "megkennemore@gmail.com"
+        },
+        "records": {
+            "patient_id": "003",
+            "appt_record": [],
+            "tests": [],
+            "vaccinations": [],
+            "medical_care": []
+        },
+        "notes": "Female employees only, does not tolerate men. Big fighter, will not come out of crate or go into it. Have treats on hand",
+        "birthdate": "November 6, 2012",
+        "breed": "American shorthair",
+        "warnings": ["FEMALE VETS & TECHS ONLY", "FIGHTER"]
+    },
+    {
+        "patient_id": "004",
+        "species": "dog",
+        "patient_name": "Mona",
+        "sex": "Female",
+        "intact": "Intact",
+        "owner_primary": {
+            "owner_id": "owner003",
+            "first_name": "Kate",
+            "last_name": "Example",
+            "phone_one": "5555555555",
+            "email": "example_email@gmail.com"
+        },
+        "records": {
+            "patient_id": "004",
+            "appt_record": [],
+            "tests": [],
+            "vaccinations": [],
+            "medical_care": []
+        },
+        "notes": "Big eater, but will bite at fingers if offered treats. No regard for her back. Sweet girl but rambunctious",
+        "birthdate": "January 1, 2023",
+        "breed": "Dachshund / Pit mix?",
+        "warnings": []
+    }
+]

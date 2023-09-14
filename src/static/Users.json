@@ -1,0 +1,20 @@
+[
+    {
+        "first_name": "Nadine",
+        "last_name": "Behringer",
+        "title": "Doctor",
+        "username": "nbehringer",
+        "password": "1234",
+        "email": "",
+        "phone_number": ""
+    },
+    {
+        "first_name": "Linda",
+        "last_name": "Pierce",
+        "title": "Tech",
+        "username": "lpierce",
+        "password": "123",
+        "email": "",
+        "phone_number": ""
+    }
+]

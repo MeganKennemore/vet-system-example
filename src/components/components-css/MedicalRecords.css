@@ -1,0 +1,13 @@
+.appt-custom-header-cell {
+    /* width: 16.67%; */
+};
+
+.appt-custom-body-cell {
+   /*  width: 16.67%; */
+    border-bottom: none !important;
+};
+
+.appt-custom-full-body-cell {
+    /* width: 83.33%; */
+    border-bottom: none !important;
+};
