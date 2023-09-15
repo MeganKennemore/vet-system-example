@@ -17,16 +17,16 @@ const root = ReactDOM.createRoot(
 );
 
 const { store, persistor } = storeItems();
-console.log(process.env.BASE_NAME);
+
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
       <ThemeProvider theme={defaultTheme}>
         <CssBaseline />
-        <BrowserRouter basename={process.env.BASE_NAME}>
+        <HashRouter basename="/vet-system-example">
           <App />
-        </BrowserRouter>
+        </HashRouter>
       </ThemeProvider>
       </PersistGate>
     </Provider>
