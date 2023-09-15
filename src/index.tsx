@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
 import storeItems from './store/store';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 
 const defaultTheme = createTheme();
@@ -17,16 +17,16 @@ const root = ReactDOM.createRoot(
 );
 
 const { store, persistor } = storeItems();
-
+console.log(process.env.BASE_NAME);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
       <ThemeProvider theme={defaultTheme}>
         <CssBaseline />
-        <HashRouter>
+        <BrowserRouter basename={process.env.BASE_NAME}>
           <App />
-        </HashRouter>
+        </BrowserRouter>
       </ThemeProvider>
       </PersistGate>
     </Provider>
