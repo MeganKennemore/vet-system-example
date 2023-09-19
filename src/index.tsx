@@ -24,7 +24,7 @@ root.render(
       <PersistGate loading={null} persistor={persistor}>
       <ThemeProvider theme={defaultTheme}>
         <CssBaseline />
-        <HashRouter basename="/vet-system-example">
+        <HashRouter>
           <App />
         </HashRouter>
       </ThemeProvider>
