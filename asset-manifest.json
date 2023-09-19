@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/vet-system-example/static/css/main.2924db93.css",
-    "main.js": "/vet-system-example/static/js/main.716804bd.js",
+    "main.js": "/vet-system-example/static/js/main.f222c83a.js",
     "static/js/787.e1d42eaa.chunk.js": "/vet-system-example/static/js/787.e1d42eaa.chunk.js",
     "static/media/pawprint_1887455.png": "/vet-system-example/static/media/pawprint_1887455.3d005085ed961240f8ed.png",
     "static/media/cat_2203926.png": "/vet-system-example/static/media/cat_2203926.e309ae17541f69f9b879.png",
     "static/media/dog_1887531.png": "/vet-system-example/static/media/dog_1887531.e155b4b4e4d5544a7aae.png",
     "index.html": "/vet-system-example/index.html",
     "main.2924db93.css.map": "/vet-system-example/static/css/main.2924db93.css.map",
-    "main.716804bd.js.map": "/vet-system-example/static/js/main.716804bd.js.map",
+    "main.f222c83a.js.map": "/vet-system-example/static/js/main.f222c83a.js.map",
     "787.e1d42eaa.chunk.js.map": "/vet-system-example/static/js/787.e1d42eaa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2924db93.css",
-    "static/js/main.716804bd.js"
+    "static/js/main.f222c83a.js"
   ]
 }
