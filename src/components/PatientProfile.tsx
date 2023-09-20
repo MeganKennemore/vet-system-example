@@ -11,11 +11,7 @@ interface PatientProfileProps {
 const PatientProfile: React.FC<PatientProfileProps> = (props) => {
   const { patient } = props;
   const theme = useTheme();
-  let isXsDevice = useMediaQuery(theme.breakpoints.down('sm'))
-  let isSmallDevice = useMediaQuery(theme.breakpoints.between('sm', 'md'));
-  let isSmallUp = useMediaQuery(theme.breakpoints.up("sm"));
-  console.log("isSmallDevice " + isSmallDevice)
-  console.log("isSmallUp " + isSmallUp);
+  let isXsDevice = useMediaQuery(theme.breakpoints.down('sm'));
   let { src, alt } = getPatientImageSrcAlt(patient);
 
   const makeOwnerContactInfo = (owner: Owner, isPrimary: boolean) => {
