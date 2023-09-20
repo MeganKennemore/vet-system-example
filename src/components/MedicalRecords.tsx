@@ -47,7 +47,7 @@ const MedicalRecords: React.FC<MedicalRecordsProps> = (props) => {
   const { appt_record, tests, vaccinations, medical_care } = records;
 
   const theme = useTheme();
-  let isXsDevice = useMediaQuery(theme.breakpoints.down('sm'));
+  let isSmallerDevice = useMediaQuery(theme.breakpoints.down('md'));
   const [apptIsCollapsed, setApptIsCollapsed] = useState(false);
   const [testIsCollapsed, setTestIsCollapsed] = useState(false);
   const [vaccsIsCollapsed, setVaccsIsCollapsed] = useState(false);
@@ -79,7 +79,7 @@ const MedicalRecords: React.FC<MedicalRecordsProps> = (props) => {
             }}
           />
         ) : (
-          isXsDevice ? (
+          isSmallerDevice ? (
             <MobileRecordsTable 
               tableName="Appointment Records"
               tableHeaders={ApptRecordHeaders}
@@ -177,7 +177,7 @@ const MedicalRecords: React.FC<MedicalRecordsProps> = (props) => {
             }}
           />
         ) : (
-          isXsDevice ? (
+          isSmallerDevice ? (
             <MobileRecordsTable 
               tableName="Test Records"
               tableHeaders={TestHeaders}
@@ -234,7 +234,7 @@ const MedicalRecords: React.FC<MedicalRecordsProps> = (props) => {
             }}
           /> 
         ) : (
-          isXsDevice ? (
+          isSmallerDevice ? (
             <MobileRecordsTable 
               tableName="Vaccination Records"
               tableHeaders={VaccinationHeaders}
@@ -289,7 +289,7 @@ const MedicalRecords: React.FC<MedicalRecordsProps> = (props) => {
             }}
           /> 
         ) : (
-          isXsDevice ? (
+          isSmallerDevice ? (
             <MobileRecordsTable 
               tableName="Records of Medical Care"
               tableHeaders={MedicalCareHeaders}

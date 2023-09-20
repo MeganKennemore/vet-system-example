@@ -8,12 +8,12 @@ interface CollapsedHeaderProps {
 const CollapsedHeader: React.FC<CollapsedHeaderProps> = (props) => {
   const { title, onOpenClick } = props;
   const theme = useTheme();
-  let isXsDevice = useMediaQuery(theme.breakpoints.down('sm'));
+  let isSmallerDevice = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <Paper 
       sx={{p: 2}}
       onClick={onOpenClick}
-      variant={isXsDevice ? "outlined" : "elevation"}
+      variant={isSmallerDevice ? "outlined" : "elevation"}
     >
       <Typography
         sx={{ flex: '1 1 100%', display: "inline-flex", alignItems: "center" }}
