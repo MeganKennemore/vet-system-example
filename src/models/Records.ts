@@ -1,4 +1,13 @@
 
+export enum TestHeaders {
+  test_name = "Test",
+  test_for_condition = "Test For Condition",
+  result = "Result",
+  test_date = "Test Date",
+  result_date = "Result Date",
+  re_test_date = "Re-Test Date",
+  appt_id = "Associated Appointment"
+};
 
 export interface Test {
   test_name: string;
@@ -10,6 +19,15 @@ export interface Test {
   test_id: string;
   appt_id: string;
   patient_id: string;
+};
+
+export enum VaccinationHeaders {
+  vaccination_name = "Vaccination",
+  type = "Type",
+  vac_date = "Vaccination Date",
+  re_vac_date = "Re-Vaccinate Date",
+  lot_number = "Lot Number",
+  appt_id = "Associated Appointment"
 };
 
 export enum VaccinationType {
@@ -29,6 +47,16 @@ export interface Vaccination {
   patient_id: string;
 };
 
+export enum MedicalCareHeaders {
+  care = "Medical Care",
+  type = "Type",
+  doses_or_recurrences = "Doses/Recurrences",
+  for = "For",
+  care_date = "Care Date",
+  review_date = "Review Date",
+  appt_id = "Associated Appointment",
+};
+
 export interface MedicalCare {
   care: string;
   type: string;
@@ -39,6 +67,17 @@ export interface MedicalCare {
   care_id: string;
   appt_id: string;
   patient_id: string;
+};
+
+export enum ApptRecordHeaders {
+  id = "Appointment ID",
+  type = "Type",
+  subtype = "Subtype",
+  medical_status = "Medical Status",
+  date = "Date",
+  review_date = "Review Date",
+  vitals = "Vitals",
+  notes = "Notes"
 };
 
 export interface ApptRecord {
