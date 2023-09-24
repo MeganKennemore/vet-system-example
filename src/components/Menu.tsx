@@ -23,6 +23,7 @@ const Menu: React.FC<MenuProps> = (props) => {
   const navigate = useNavigate();
   const loggedInUser = useAppSelector(selectLoggedInUser);
   const isLargerDevice = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'));
+
   const toggleDrawer = (toggle: boolean) => () => {
     setIsOpen(toggle);
   };
@@ -99,7 +100,12 @@ const Menu: React.FC<MenuProps> = (props) => {
           {menuItems.map((item, index) => {
             if (item.url) {
               return (
-                <Link key={`menu-item-${item.text}-${index}`} to={item.url} style={{ color: "inherit", textDecoration: "none" }}>
+                <Link 
+                  key={`menu-item-${item.text}-${index}`} 
+                  to={item.url} 
+                  style={{ color: "inherit", textDecoration: "none" }}
+                  onClick={toggleDrawer(false)}
+                >
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>

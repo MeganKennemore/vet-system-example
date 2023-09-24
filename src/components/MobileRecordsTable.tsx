@@ -24,36 +24,40 @@ const MobileRecordsTable: React.FC<MobileRecordsTableProps> = (props) => {
         <KeyboardArrowUpIcon sx={{ margin: "auto", marginLeft: 1 }} />
        )}
       </Typography>
-      {tableRows.map((row: any) => {
-        let keys = Object.keys(tableHeaders);
-        if (keys.includes("notes") && (!row.notes || row.notes === "")) {
-          keys.splice(7, 1);
-        }
-        if (keys.includes("vitals") && (!row.vitals || row.vitals === "")) {
-          keys.splice(6, 1);
-        }
+      {tableRows.length === 0 ? (
+        <Typography>No Records available</Typography>
+      ) : (      
+        tableRows.map((row: any) => {
+          let keys = Object.keys(tableHeaders);
+          if (keys.includes("notes") && (!row.notes || row.notes === "")) {
+            keys.splice(7, 1);
+          }
+          if (keys.includes("vitals") && (!row.vitals || row.vitals === "")) {
+            keys.splice(6, 1);
+          }
 
-        return (
-          <Card sx={{ mb: 2, p: 2 }}>
-            <Grid container>
-              {keys.map((key:any) => {
-                return (
-                  <Grid item container flexDirection={"row"} justifyContent={"space-between"}>
-                    <Grid item>
-                      <Typography sx={{ fontWeight: "bold" }}>{tableHeaders[key]}</Typography>
+          return (
+            <Card sx={{ mb: 2, p: 2 }}>
+              <Grid container>
+                {keys.map((key:any) => {
+                  return (
+                    <Grid item container flexDirection={"row"} justifyContent={"space-between"}>
+                      <Grid item>
+                        <Typography sx={{ fontWeight: "bold" }}>{tableHeaders[key]}</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography>
+                          {key.includes("date") && (row[key] && row[key] !== "") ? new Date(row[key]).toDateString() : row[key]}
+                        </Typography>
+                      </Grid>
                     </Grid>
-                    <Grid item>
-                      <Typography>
-                        {key.includes("date") && (row[key] && row[key] !== "") ? new Date(row[key]).toDateString() : row[key]}
-                      </Typography>
-                    </Grid>
-                  </Grid>
-                );
-              })}
-            </Grid>
-          </Card>
-        );
-      })}
+                  );
+                })}
+              </Grid>
+            </Card>
+          );
+        })
+      )}
     </Paper>
   );
 };

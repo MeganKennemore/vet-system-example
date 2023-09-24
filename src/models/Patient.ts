@@ -1,4 +1,5 @@
 import { Owner } from "./Owner";
+import { Records } from "./Records";
 
 export enum PatientSex {
     M = "Male",
@@ -33,7 +34,7 @@ export interface Patient {
     patient_name: string;
     owner_primary: Owner;
     owner_secondary?: Owner;
-    records: any;
+    records: Records;
     image?: string;
     notes: string;
     birthdate: string;
