@@ -8,10 +8,11 @@ import history from "history/browser";
 
 interface AppHeaderProps {
   showBack: boolean;
+  pageTitle: string;
 }
 
 const AppHeader: React.FC<AppHeaderProps> = (props) => {
-  const { showBack } = props;
+  const { showBack, pageTitle } = props;
   const [isOpen, setIsOpen] = useState(false);
   const [display, setDisplay] = useState("none");
   const { pathname } = useLocation();
@@ -66,7 +67,7 @@ const AppHeader: React.FC<AppHeaderProps> = (props) => {
               </IconButton>
             )}
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              {/* {title} */}
+              {pageTitle}
             </Typography>
           </Toolbar>
         </AppBar>
