@@ -50,7 +50,7 @@ const Menu: React.FC<MenuProps> = (props) => {
     {
       text: "Appointments",
       icon: <CalendarMonthIcon />,
-      url: "",
+      url: "/appointments",
     },
     {
       text: "Settings",
