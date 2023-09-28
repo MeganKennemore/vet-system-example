@@ -1,0 +1,120 @@
+[
+  {
+    "employees": [{
+        "user_id": "t-001",
+        "first_name": "Linda",
+        "last_name": "Pierce",
+        "title": "Tech",
+        "username": "lpierce",
+        "password": "123",
+        "email": "",
+        "phone_number": ""
+    }],
+    "time": "09:30 am",
+    "length": 45,
+    "type": "TYPE",
+    "patient_name": "Kiwi",
+    "id": "appt-001"
+  },
+  {
+    "employees": [{
+        "user_id": "t-001",
+        "first_name": "Linda",
+        "last_name": "Pierce",
+        "title": "Tech",
+        "username": "lpierce",
+        "password": "123",
+        "email": "",
+        "phone_number": ""
+    }],
+    "time": "10:15 am",
+    "length": 60,
+    "type": "TYPE",
+    "patient_name": "Olive",
+    "id": "appt-002"
+  },
+  {
+    "employees": [{
+        "user_id": "t-001",
+        "first_name": "Linda",
+        "last_name": "Pierce",
+        "title": "Tech",
+        "username": "lpierce",
+        "password": "123",
+        "email": "",
+        "phone_number": ""
+    }],
+    "time": "12:00 pm",
+    "length": 90,
+    "type": "TYPE",
+    "patient_name": "Queso"
+  },
+  {
+    "employees": [{
+        "user_id": "t-001",
+        "first_name": "Linda",
+        "last_name": "Pierce",
+        "title": "Tech",
+        "username": "lpierce",
+        "password": "123",
+        "email": "",
+        "phone_number": ""
+    }],
+    "time": "02:00 pm",
+    "length": 30,
+    "type": "TYPE",
+    "patient_name": "Mona",
+    "id": "appt-003"
+  },
+  {
+    "employees": [{
+        "user_id": "t-001",
+        "first_name": "Linda",
+        "last_name": "Pierce",
+        "title": "Tech",
+        "username": "lpierce",
+        "password": "123",
+        "email": "",
+        "phone_number": ""
+    }],
+    "time": "04:00 pm",
+    "length": 60,
+    "type": "TYPE",
+    "patient_name": "Valkyrie",
+    "id": "appt-004"
+  },
+  {
+    "employees": [{
+        "user_id": "d-001",
+        "first_name": "Nadine",
+        "last_name": "Behringer",
+        "title": "Doctor",
+        "username": "nbehringer",
+        "password": "1234",
+        "email": "",
+        "phone_number": ""
+    }],
+    "time": "07:00 am",
+    "length": 15,
+    "type": "TYPE",
+    "patient_name": "Kiwi",
+    "id": "appt-005"
+  },
+  {
+    "employees": [{
+        "user_id": "t-001",
+        "first_name": "Linda",
+        "last_name": "Pierce",
+        "title": "Tech",
+        "username": "lpierce",
+        "password": "123",
+        "email": "",
+        "phone_number": ""
+    }],
+    "time": "08:00 am",
+    "length": 90,
+    "type": "TYPE",
+    "patient_name": "Kiwi",
+    "id": "appt-006"
+  }
+]

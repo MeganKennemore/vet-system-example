@@ -1,6 +1,12 @@
 import { Box } from "@mui/material";
+import ScheduleDisplay from "../components/ScheduleDisplay";
+import { useAppSelector } from "../store/hooks";
+import { selectLoggedInUser } from "../features/app/AppSlice";
 
 const Appointments: React.FC = () => {
+  
+  const loggedInUser = useAppSelector(selectLoggedInUser);
+
   return (
     <Box 
       component="main" 
@@ -23,6 +29,7 @@ const Appointments: React.FC = () => {
       }}
     >
       HI THIS IS APPOINTMENTS
+      <ScheduleDisplay userId={loggedInUser?.user_id || "t-001"}/>
     </Box>
   );
 };
