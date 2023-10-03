@@ -1,33 +1,28 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../../store/store';
-import { User } from '../../models/User';
+import { LoggedInUser } from '../../models/User';
 
 interface AppState {
-  loggedIn: boolean;
-  loggedInUser?: User;
+  loggedInUser?: LoggedInUser;
   showBackButton: boolean;
+  appHasInited: boolean;
 };
 
 const startingState: AppState = {
-  loggedIn: false,
   loggedInUser: undefined,
   showBackButton: false,
+  appHasInited: false,
 };
 
 export const appSlice = createSlice({
   name: 'app',
   initialState: startingState,
   reducers: {
-    setLoggedIn: (state) => {
-      state.loggedIn = true;
-    },
-    setLoggedInUser: (state, action: PayloadAction<User>) => {
+    setLoggedInUser: (state, action: PayloadAction<LoggedInUser>) => {
       state.loggedInUser = action.payload;
-      state.loggedIn = true;
     },
     clearLoggedInUser: (state) => {
       state.loggedInUser = undefined;
-      state.loggedIn = false;
     },
     noBackButton: (state) => {
       state.showBackButton = false;
@@ -35,19 +30,22 @@ export const appSlice = createSlice({
     yesBackButton: (state) => {
       state.showBackButton = true;
     },
+    setAppHasInited: (state) => {
+      state.appHasInited = true;
+    }
   },
 });
 
 export const {
-  setLoggedIn,
   setLoggedInUser,
   clearLoggedInUser,
   noBackButton,
-  yesBackButton
+  yesBackButton,
+  setAppHasInited
 } = appSlice.actions;
 
-export const selectLoggedIn = (state: RootState) => state.app.loggedIn;
 export const selectLoggedInUser = (state: RootState) => state.app.loggedInUser;
 export const selectBackButton = (state: RootState) => state.app.showBackButton;
+export const selectAppHasInited = (state: RootState) => state.app.appHasInited;
 
 export default appSlice.reducer;

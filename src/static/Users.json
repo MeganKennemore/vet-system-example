@@ -1,20 +1,22 @@
 [
     {
+        "user_id": "d-001",
         "first_name": "Nadine",
         "last_name": "Behringer",
         "title": "Doctor",
         "username": "nbehringer",
         "password": "1234",
         "email": "",
-        "phone_number": ""
+        "phone_number": "555-555-5555"
     },
     {
+        "user_id": "t-001",
         "first_name": "Linda",
         "last_name": "Pierce",
-        "title": "Tech",
+        "title": "Technician",
         "username": "lpierce",
         "password": "123",
         "email": "",
-        "phone_number": ""
+        "phone_number": "555-567-5555"
     }
 ]

@@ -87,7 +87,7 @@ const Menu: React.FC<MenuProps> = (props) => {
       >
         <div style={{ width: "100%", display: "inline-flex", alignItems: "center", justifyContent: "space-between" }}>
           <Typography style={{ padding: theme.spacing(2), fontWeight: 500 }}>
-            {loggedInUser?.first_name} {loggedInUser?.last_name}
+            {loggedInUser?.user?.first_name} {loggedInUser?.user?.last_name}
           </Typography>
           <IconButton 
             onClick={toggleDrawer(false)}

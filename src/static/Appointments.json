@@ -1,0 +1,252 @@
+[
+  {
+    "id": "appt-001",
+    "employees": [{
+        "user_id": "t-001",
+        "first_name": "Linda",
+        "last_name": "Pierce",
+        "title": "Tech",
+        "username": "lpierce",
+        "password": "123",
+        "email": "",
+        "phone_number": "555-567-5555"
+    }],
+    "patients": [{
+      "patient_id": "001",
+      "patient_name": "Kiwi",
+      "patient_species": "dog",
+      "patient_gender": "Spayed Female"
+    }],
+    "owners": [{
+      "owner_id": "owner001",
+      "first_name": "Megan",
+      "last_name": "Kennemore",
+      "phone_one": "6789385680",
+      "email": "megkennemore@gmail.com"
+  }],
+    "time": "09:30 am",
+    "length": 45,
+    "type": "Post-Op",
+    "status": "Confirmed",
+    "pre_appt_notes": "Post operation care and post op instructions for owners",
+    "records": []
+  },
+  {
+    "id": "appt-002",
+    "employees": [{
+        "user_id": "t-001",
+        "first_name": "Linda",
+        "last_name": "Pierce",
+        "title": "Tech",
+        "username": "lpierce",
+        "password": "123",
+        "email": "",
+        "phone_number": "555-567-5555"
+    }],
+    "patients": [{
+      "patient_id": "003",
+      "patient_name": "Olive",
+      "patient_species": "cat",
+      "patient_gender": "Spayed Female"
+    }],
+    "owners": [
+      {
+        "owner_id": "owner002",
+        "first_name": "Pam",
+        "last_name": "Kennemore",
+        "phone_one": "4045555555",
+        "email": "example_email@gmail.com"
+      }, {
+        "owner_id": "owner001",
+        "first_name": "Megan",
+        "last_name": "Kennemore",
+        "phone_one": "6789385680",
+        "email": "megkennemore@gmail.com"
+      }
+    ],
+    "time": "10:15 am",
+    "length": 60,
+    "type": "Check-Up",
+    "status": "Confirmed",
+    "pre_appt_notes": "Standard Check up on an elderly cat",
+    "records": []
+  },
+  {
+    "id": "appt-007",
+    "employees": [{
+        "user_id": "t-001",
+        "first_name": "Linda",
+        "last_name": "Pierce",
+        "title": "Tech",
+        "username": "lpierce",
+        "password": "123",
+        "email": "",
+        "phone_number": "555-567-5555"
+    }],
+    "patients": [{
+      "patient_id": "002",
+      "patient_name": "Queso",
+      "patient_species": "cat",
+      "patient_gender": "Neutered Male"
+    }],
+    "owners": [
+      {
+        "owner_id": "owner002",
+        "first_name": "Pam",
+        "last_name": "Kennemore",
+        "phone_one": "4045555555",
+        "email": "example_email@gmail.com"
+      }, {
+        "owner_id": "owner001",
+        "first_name": "Megan",
+        "last_name": "Kennemore",
+        "phone_one": "6789385680",
+        "email": "megkennemore@gmail.com"
+      }
+    ],
+    "time": "12:00 pm",
+    "length": 90,
+    "type": "Dental Cleaning",
+    "status": "Confirmed",
+    "pre_appt_notes": "Dental cleaning for cat, pre-op blood tests already done",
+    "records": []
+  },
+  {
+    "id": "appt-003",
+    "employees": [{
+        "user_id": "t-001",
+        "first_name": "Linda",
+        "last_name": "Pierce",
+        "title": "Tech",
+        "username": "lpierce",
+        "password": "123",
+        "email": "",
+        "phone_number": "555-567-5555"
+    }],
+    "patients": [{
+      "patient_id": "004",
+      "patient_name": "Mona",
+      "patient_species": "dog",
+      "patient_gender": "Intact Female"
+    }],
+    "owners": [{
+      "owner_id": "owner003",
+      "first_name": "Kate",
+      "last_name": "Example",
+      "phone_one": "5555555555",
+      "email": "example_email@gmail.com"
+    }],
+    "time": "02:00 pm",
+    "length": 30,
+    "type": "General Care",
+    "status": "Confirmed",
+    "pre_appt_notes": "Owner requested a routine care appointment",
+    "records": []
+  },
+  {
+    "id": "appt-004",
+    "employees": [{
+        "user_id": "t-001",
+        "first_name": "Linda",
+        "last_name": "Pierce",
+        "title": "Tech",
+        "username": "lpierce",
+        "password": "123",
+        "email": "",
+        "phone_number": "555-567-5555"
+    }],
+    "patients": [{
+      "patient_id": "005",
+      "patient_name": "Valkyrie",
+      "patient_species": "dog",
+      "patient_gender": "Spayed Female"
+    }],
+    "owners": [
+      {
+        "first_name": "Lauren",
+        "last_name": "Example",
+        "phone_one": "6785555555",
+        "email": "example_email@hotmail.com",
+        "credit_card": "5555 5555 5555 5555",
+        "owner_id": "owner004"
+      }, {
+        "first_name": "Matthew",
+        "last_name": "Example",
+        "phone_one": "9785555555",
+        "phone_two": "3215555555",
+        "email": "example_email@microsoft.com",
+        "owner_id": "owner005"
+      }
+    ],
+    "time": "04:00 pm",
+    "length": 60,
+    "type": "Wound Care",
+    "status": "Confirmed",
+    "pre_appt_notes": "Owner reports patient has gash down forelimb",
+    "records": []
+  },
+  {
+    "id": "appt-005",
+    "employees": [{
+        "user_id": "d-001",
+        "first_name": "Nadine",
+        "last_name": "Behringer",
+        "title": "Doctor",
+        "username": "nbehringer",
+        "password": "1234",
+        "email": "",
+        "phone_number": "555-555-5555"
+    }],
+    "patients": [{
+      "patient_id": "001",
+      "patient_name": "Kiwi",
+      "patient_species": "dog",
+      "patient_gender": "Spayed Female"
+    }],
+    "owners": [{
+      "owner_id": "owner001",
+      "first_name": "Megan",
+      "last_name": "Kennemore",
+      "phone_one": "6789385680",
+      "email": "megkennemore@gmail.com"
+  }],
+    "time": "07:00 am",
+    "length": 15,
+    "type": "Exam",
+    "status": "Confirmed",
+    "pre_appt_notes": "Quick exam to be sure the patient is ready for surgery",
+    "records": []
+  },
+  {
+    "id": "appt-006",
+    "employees": [{
+        "user_id": "t-001",
+        "first_name": "Linda",
+        "last_name": "Pierce",
+        "title": "Tech",
+        "username": "lpierce",
+        "password": "123",
+        "email": "",
+        "phone_number": "555-567-5555"
+    }],
+    "patients": [{
+      "patient_id": "001",
+      "patient_name": "Kiwi",
+      "patient_species": "Dog",
+      "patient_gender": "Spayed Female"
+    }],
+    "owners": [{
+      "owner_id": "owner001",
+      "first_name": "Megan",
+      "last_name": "Kennemore",
+      "phone_one": "6789385680",
+      "email": "megkennemore@gmail.com"
+  }],
+    "time": "08:00 am",
+    "length": 90,
+    "type": "Surgery",
+    "status": "Confirmed",
+    "pre_appt_notes": "Foreign object removal",
+    "records": []
+  }
+]

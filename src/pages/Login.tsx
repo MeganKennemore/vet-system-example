@@ -3,9 +3,10 @@ import "./pages-css/Login.css";
 import { useState } from "react";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { selectLoggedIn } from "../features/app/AppSlice";
 import { Navigate, useNavigate } from "react-router-dom";
 import { login } from "../features/app/AppActions";
+import { selectLoggedInUser } from "../features/app/AppSlice";
+import { loggedInUserIsValid } from "../api/UsersApi";
 
 const Login: React.FC = () => {
   const [userName, setUserName] = useState("");
@@ -16,7 +17,7 @@ const Login: React.FC = () => {
   const [invalidUserError, setInvalidUserError] = useState(false);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const isLoggedIn = useAppSelector(selectLoggedIn);
+  const loggedInUser = useAppSelector(selectLoggedInUser);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -62,8 +63,12 @@ const Login: React.FC = () => {
     });
   };
 
-  if (isLoggedIn) {
-    return <Navigate to="/home" />;
+  if (loggedInUser) {
+    loggedInUserIsValid(loggedInUser).then((result) => {
+      if (result) {
+        return <Navigate to="/home" />;
+      }
+    });
   }
 
   return (

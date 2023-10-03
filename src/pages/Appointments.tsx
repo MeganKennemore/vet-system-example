@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import ScheduleDisplay from "../components/ScheduleDisplay";
 
 const Appointments: React.FC = () => {
   return (
@@ -22,7 +23,7 @@ const Appointments: React.FC = () => {
         } 
       }}
     >
-      HI THIS IS APPOINTMENTS
+      <ScheduleDisplay />
     </Box>
   );
 };
