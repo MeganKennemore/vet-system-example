@@ -2,9 +2,11 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage';
 import appReducer from '../features/app/AppSlice';
+import appointmentReducer from '../features/appointments/AppointmentSlice';
 
 const reducer = combineReducers({
   app: appReducer,
+  appointment: appointmentReducer
 });
 
 const persistConfig = {

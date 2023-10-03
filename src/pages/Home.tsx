@@ -1,4 +1,4 @@
-import { Box, Grid, List, ListItem, ListSubheader, Paper, Theme, Typography, useMediaQuery } from "@mui/material";
+import { Box, Grid, Dialog, Paper, Theme, useMediaQuery, DialogContent, DialogActions, Button, Toolbar, AppBar } from "@mui/material";
 import { selectLoggedInUser } from "../features/app/AppSlice";
 import { useAppSelector } from "../store/hooks";
 import ScheduleDisplay from "../components/ScheduleDisplay";
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
         <Grid item xs={12} lg={3}>
           <Paper sx={{p: 2}}>
             <ScheduleDisplay 
-              userId={loggedInUser?.user_id || "t-001"}
+              userId={loggedInUser?.user?.user_id || "t-001"}
               onApptClick={(e) => {
                 if (e === selectedAppointment) {
                   setSelectedAppointment(undefined);
@@ -56,7 +56,9 @@ const Home: React.FC = () => {
         </Grid>
         {(isLargerDevice && selectedAppointment) && (
           <Grid item lg={9}>
-            <AppointmentDisplay appointment={selectedAppointment} />
+            <Paper sx={{ p: 2 }}>
+              <AppointmentDisplay appointment={selectedAppointment} />
+            </Paper>
             {/* <Paper sx={{p: 2}}>
               <Typography variant={"h6"}>Appointment details</Typography>
               <p>Appropriate details for the appointment. Have panel hidden or collapsed until an appointment is selected?</p>
@@ -67,6 +69,27 @@ const Home: React.FC = () => {
           </Grid>
         )}
       </Grid>
+      {(!isLargerDevice && selectedAppointment) && (
+        <Dialog 
+          fullScreen 
+          open={!!selectedAppointment}
+        >
+          <AppBar sx={{ position: 'relative' }}>
+            <Toolbar>
+              <DialogActions>
+                <Button autoFocus color="inherit" onClick={() => {
+                  setSelectedAppointment(undefined);
+                }}>
+                  Close
+                </Button>
+              </DialogActions>
+            </Toolbar>
+          </AppBar>
+          <DialogContent>
+            <AppointmentDisplay appointment={selectedAppointment} />
+          </DialogContent>
+        </Dialog>
+      )}
       <p>Somewhere on this page neeeds to be buttons for quick actions (ie no menu navigation) for creating a new appointment</p>
       <p>On mobile, can be a FAB button (MUI doesn't have FAB groups/lists like Ionic. Might be able to duplicate with Popover API, or find other solution?)</p>
     </Box>

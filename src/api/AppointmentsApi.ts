@@ -1,7 +1,7 @@
 import { Appointments } from "../models/Appointments";
 import AppointmentsData from "../static/Appointments.json";
 
-const getAllAppointments = async () => {
+/* const getAllAppointments = async () => {
   let today = (new Date()).toDateString();
   let allAppts = AppointmentsData as Appointments[];
   allAppts.forEach((appt) => {
@@ -12,19 +12,17 @@ const getAllAppointments = async () => {
     appt.title = `${appt.type} - ${appt.patient_name}`;
   });
   return allAppts;
-};
+}; */
 
-export const fetchAppointmentsByUserId = async (userId: string) => {
+export const fetchAppointmentsByUserId = async (appointments: Appointments[], userId: string) => {
   let theirAppts = [] as Appointments[];
- return getAllAppointments().then((allAppts) => {
-    allAppts.forEach((appt: Appointments) => {
-      let userIdPresent = appt.employees.some((user) => {
-        return user.user_id === userId;
-      });
-      if (userIdPresent) {
-        theirAppts.push(appt);
-      }
+  appointments.forEach((appt: Appointments) => {
+    let userIdPresent = appt.employees.some((user) => {
+      return user.user_id === userId;
     });
-    return theirAppts;
+    if (userIdPresent) {
+      theirAppts.push(appt);
+    }
   });
+  return theirAppts;
 };

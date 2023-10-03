@@ -7,4 +7,10 @@ export interface User {
   password: string;
   email: string;
   phone_number: string;
-}
+};
+
+export interface LoggedInUser {
+  user: User;
+  loginExpiration: string;
+  settings?: any;
+};

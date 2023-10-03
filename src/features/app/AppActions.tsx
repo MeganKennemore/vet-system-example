@@ -6,9 +6,13 @@ export const login = (username: string, password: string) => (dispatch: any) => 
     if (result.length === 0 || result.length > 1) {
       return Promise.reject();
     } else if (result[0].username === username && result[0].password === password) {
-      dispatch(setLoggedInUser(result[0])).then(() => {
+      let loggedInUser = {
+        user: result[0],
+        loginExpiration: (new Date((new Date()).valueOf() + 172800000)).toISOString()
+      };
+      dispatch(setLoggedInUser(loggedInUser)).then(() => {
         return Promise.resolve();
-      })
+      });
       
     } else {
       return Promise.reject();
