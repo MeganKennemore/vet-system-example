@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import PatientRecords from './pages/PatientRecords';
 import PatientPage from './pages/PatientPage';
 import Appointments from './pages/Appointments';
+import AppointmentPage from './pages/AppointmentPage';
 
 const PageRoutes: React.FC = () => {
 
@@ -19,6 +20,7 @@ const PageRoutes: React.FC = () => {
         </Route>
         <Route path="appointments">
           <Route path="" element={<Appointments />} />
+          <Route path="appointment/:apptId" element={<AppointmentPage />} />
         </Route>     
       </Route>
       <Route path="/login" element={<Login />} />

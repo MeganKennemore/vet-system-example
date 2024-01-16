@@ -26,3 +26,9 @@ export const fetchAppointmentsByUserId = async (appointments: Appointments[], us
   });
   return theirAppts;
 };
+
+export const fetchAppointmentByApptId = async (appointments: Appointments[], apptId: string) => {
+  return appointments.find((appt) => {
+    return appt.id === apptId;
+  });
+};

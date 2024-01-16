@@ -1,30 +1,23 @@
-import { Box } from "@mui/material";
+import { CircularProgress } from "@mui/material";
 import ScheduleDisplay from "../components/ScheduleDisplay";
+import { useState } from "react";
+import MainBox from "../components/MainBox";
 
 const Appointments: React.FC = () => {
+  const [showLoading, setShowLoading] = useState(false);
+  
   return (
-    <Box 
-      component="main" 
-      sx={{ 
-        position: "absolute", 
-        right: 0, 
-        flexGrow: 1, 
-        p: {
-            xs: 1,
-            md: 3,
-        },
-        paddingTop: {
-            xs: 8,
-            md: 8
-        }, 
-        width: { 
-            xs: "100%", 
-            md: `calc(100% - 240px)` 
-        } 
-      }}
-    >
-      <ScheduleDisplay />
-    </Box>
+    <MainBox>
+      {showLoading ? (
+        <CircularProgress />
+      ) : (
+        <ScheduleDisplay 
+          tooltip={true}
+          setLoading={setShowLoading}
+          //tooltip={<AppointmentTooltip showCloseButton />}
+        />
+      )}
+    </MainBox>
   );
 };
 

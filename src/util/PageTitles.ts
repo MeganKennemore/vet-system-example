@@ -3,6 +3,7 @@ const pageTitles = {
   "/patient-records": "Patient Records", 
   "/patient-records/patient/[0-9]+$": "Patient ",
   "/appointments": "Appointments", 
+  "/appointments/appointment/appt-[0-9]+$": "Appointment ", 
   "/settings": "Settings"
 } as any;
 
@@ -23,7 +24,10 @@ export const getPageTitle = (location: string) => {
     }
   });
   if (header && hasId) {
-    let ids = location.match(/[0-9]+$/);
+    let ids = location.match(/appt-[0-9]+$/);
+    if (ids === null) {
+      ids = location.match(/[0-9]+$/);
+    }
     if (ids && ids.length > 0) {
       return pageTitles[header] + ids[ids.length - 1];
     }
