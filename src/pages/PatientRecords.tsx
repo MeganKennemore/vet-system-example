@@ -5,6 +5,7 @@ import "./pages-css/PatientRecords.css";
 import { useNavigate } from "react-router-dom";
 import { fetchAllPatients, fetchAllSpecies, filterPatients } from "../api/PatientsApi";
 import { getPatientImageSrcAlt, makeProperNoun } from "../util/VisualHelper";
+import MainBox from "../components/MainBox";
 
 const PatientRecords: React.FC = () => {
   const isLargerDevice = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'));
@@ -68,25 +69,7 @@ const PatientRecords: React.FC = () => {
   };
   
   return (
-    <Box 
-      sx={{ 
-        position: "absolute", 
-        right: 0, 
-        flexGrow: 1, 
-        p: {
-          xs: 1,
-          md: 3,
-        },
-        paddingTop: {
-          xs: 8,
-          md: 8
-        }, 
-        width: { 
-          xs: "100%", 
-          md: `calc(100% - 240px)` 
-        } 
-      }}
-    >
+    <MainBox>
       <Box className="filter-card-holder">
         <Card sx={{ p: 1 }}>
           <CardHeader 
@@ -232,7 +215,7 @@ const PatientRecords: React.FC = () => {
           </List>
         )}
       </Box>
-    </Box>
+    </MainBox>
   );
 };
 
