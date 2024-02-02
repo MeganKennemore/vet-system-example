@@ -2,26 +2,24 @@ import { Container } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 import PageRoutes from './PageRoutes';
 import AppHeader from './components/AppHeader';
-import { useAppDispatch, useAppSelector } from './store/hooks';
-import { noBackButton, selectAppHasInited, selectBackButton, selectLoggedInUser, yesBackButton } from './features/app/AppSlice';
 import { useEffect, useState } from 'react';
 import { getPageTitle } from './util/PageTitles';
-import { loadAppointments } from './features/appointments/AppointmentActions';
 import { loggedInUserIsValid } from './api/UsersApi';
-import { logout } from './features/app/AppActions';
+import { logout } from "./util/feature-functions/Login";
+import { loadAppointments } from './util/feature-functions/Appointments';
 
 function App() {
-  const loggedInUser = useAppSelector(selectLoggedInUser);
+  // @ts-ignore
+  const loggedInUser = globalThis.__LOGGEDINUSER__;
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
   const { hash, pathname } = useLocation();
-  const showBackButton = useAppSelector(selectBackButton);
-  const appHasInited = useAppSelector(selectAppHasInited);
   let parentPages = ["/home", "/patient-records", "/appointments", "/settings"];
   const [pageTitle, setPageTitle] = useState("");
+  const [showBackButton, setShowBackButton] = useState(false);
+  const [appHasInited, setAppHasInited] = useState(false);
 
   const redoLogin = async () => {
-    await dispatch(await logout()).then(() => {
+    await logout().then(() => {
       navigate("/login");
     });
   };
@@ -45,14 +43,18 @@ function App() {
   useEffect(() => {
     setPageTitle(getPageTitle(pathname));
     if (!parentPages.includes(pathname) && !showBackButton) {
-      dispatch(yesBackButton());
+      setShowBackButton(true);
     } else if (parentPages.includes(pathname) && showBackButton) {
-      dispatch(noBackButton());
+      setShowBackButton(false);
     }
   }, [pathname]);
   
   const load = async () => {
-    await dispatch(await loadAppointments());
+    await loadAppointments().then((success: boolean) => {
+      if (success) {
+        setAppHasInited(success);
+      }
+    });
   };
 
   useEffect(() => {

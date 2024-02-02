@@ -9,6 +9,7 @@ import App from './App';
 import storeItems from './store/store';
 import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
+import { getLoggedInUser } from './util/LocalStorage';
 
 const defaultTheme = createTheme();
 
@@ -17,6 +18,11 @@ const root = ReactDOM.createRoot(
 );
 
 const { store, persistor } = storeItems();
+
+// @ts-ignore
+if (!globalThis.__LOGGEDINUSER__) {
+  getLoggedInUser();
+}
 
 root.render(
   <React.StrictMode>

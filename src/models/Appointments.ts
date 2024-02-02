@@ -18,7 +18,7 @@ export enum AppointmentStatus {
   unknown = "Unknown",
 };
 
-export interface Appointments {
+export interface AppointmentModel {
   id: string;
   employees: User[];
   patients: ApptPatient[];

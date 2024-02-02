@@ -6,9 +6,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { Link, useNavigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { selectLoggedInUser } from "../features/app/AppSlice";
-import { logout } from "../features/app/AppActions";
+import { logout } from "../util/feature-functions/Login";
 
 interface MenuProps {
   isOpen: boolean;
@@ -19,9 +17,9 @@ interface MenuProps {
 const Menu: React.FC<MenuProps> = (props) => {
   const { isOpen, setIsOpen, display } = props;
   const theme = useTheme();
-  const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const loggedInUser = useAppSelector(selectLoggedInUser);
+  // @ts-ignore
+  const loggedInUser = globalThis.__LOGGEDINUSER__;
   const isLargerDevice = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'));
 
   const toggleDrawer = (toggle: boolean) => () => {
@@ -29,7 +27,7 @@ const Menu: React.FC<MenuProps> = (props) => {
   };
 
   const logoutClick = () => {
-    dispatch(logout).then(() => {
+    logout().then(() => {
       navigate("/");
     }).catch(() => {
       // ¯\_(ツ)_/¯

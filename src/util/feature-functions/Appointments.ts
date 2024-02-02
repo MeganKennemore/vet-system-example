@@ -1,16 +1,15 @@
-import { clearAppointments, setAppointments } from "./AppointmentSlice";
+import { AppointmentModel } from "../../models/Appointments";
+import { clearAppointments, setAppointments } from "../LocalStorage";
 import AppointmentsData from "../../static/Appointments.json";
 import UserData from "../../static/Users.json";
 import PatientsData from "../../static/Patients.json";
-import { Appointments } from "../../models/Appointments";
 import { User } from "../../models/User";
 import { Patient, getIntactLanguage } from "../../models/Patient";
-import { setAppHasInited } from "../app/AppSlice";
 
 let today = new Date();
 
 const createAppointments = () => {
-  let generatedAppointments = [] as Appointments[];
+  let generatedAppointments = [] as AppointmentModel[];
   let allEmployees = UserData as User[];
   let allPatients = PatientsData as Patient[];
   let numberOfAppointments = Math.floor((Math.random() * 42) + 14);
@@ -58,15 +57,15 @@ const createAppointments = () => {
       status: startDate.valueOf() > today.valueOf() ? "Completed" : "Confirmed",
       pre_appt_notes: appt.notes,
       title: appt.type
-    } as Appointments;
+    } as AppointmentModel;
     generatedAppointments.push(newAppt);
   }
   return generatedAppointments;
 }
 
-export const loadAppointments = async () => (dispatch: any) => {
-  dispatch(clearAppointments());
-  let todaysAppointments = [] as Appointments[];
+export const loadAppointments = async () => {
+  clearAppointments();
+  let todaysAppointments = [] as AppointmentModel[];
   let allAppts = AppointmentsData;
   allAppts.forEach((appt) => {
     let goodAppt = {...appt} as any;
@@ -79,6 +78,13 @@ export const loadAppointments = async () => (dispatch: any) => {
   });
   // Randomly generate some appointments and add the today's appointments
   let allAppointments = createAppointments();
-  dispatch(setAppointments(allAppointments.concat(todaysAppointments)));
-  dispatch(setAppHasInited());
+  return setAppointments(allAppointments.concat(todaysAppointments)).then((ret) => {
+    if (typeof ret === "undefined") {
+      return Promise.resolve(true);
+    } else if (typeof ret === "object") {
+      return Promise.reject(false);  
+    } else {
+      return Promise.reject(false);
+    }
+  });
 };

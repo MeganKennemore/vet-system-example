@@ -9,7 +9,7 @@ export const filterUsersByUsername = (username: string) => {
   return new Promise((resolve,reject) => {
     const filteredUsers = UsersData.filter((user) => {
       return user.username === username;
-    });
+    }) as User[];
     if (filteredUsers.length > 0) {
       resolve(filteredUsers);
     } else {

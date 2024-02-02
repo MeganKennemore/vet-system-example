@@ -1,23 +1,20 @@
-import { Box, CircularProgress, Container, Modal, Typography } from "@mui/material";
+import { CircularProgress, Typography } from "@mui/material";
 import AppointmentDisplay from "../components/AppointmentDisplay";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Appointments } from "../models/Appointments";
-import { useAppSelector } from "../store/hooks";
-import { selectAppointments } from "../features/appointments/AppointmentSlice";
+import { AppointmentModel } from "../models/Appointments";
 import { fetchAppointmentByApptId } from "../api/AppointmentsApi";
 import MainBox from "../components/MainBox";
 
 const AppointmentPage: React.FC = () => {
   const { apptId } = useParams();
-  const [appointment, setAppointment] = useState<Appointments | undefined>();
+  const [appointment, setAppointment] = useState<AppointmentModel | undefined>();
   const [showLoading, setShowLoading] = useState(true);
-  const allAppointments = useAppSelector(selectAppointments);
 
   useEffect(() => {
     setShowLoading(true);
-    if (apptId && allAppointments) {
-      fetchAppointmentByApptId(allAppointments, apptId).then((appt) => {
+    if (apptId) {
+      fetchAppointmentByApptId(apptId).then((appt) => {
         setAppointment(appt);
         setShowLoading(false);
       })
@@ -25,7 +22,7 @@ const AppointmentPage: React.FC = () => {
       setAppointment(undefined);
       setShowLoading(false);
     }
-  }, [apptId, allAppointments]);
+  }, [apptId]);
 
   if (showLoading) {
     return (
