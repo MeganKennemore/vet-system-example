@@ -1,5 +1,5 @@
 import { Box, Button, FormControl, Grid, OutlinedInput, Paper, TextField, Theme, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { Appointments, ApptPatient } from "../models/Appointments";
+import { AppointmentModel, ApptPatient } from "../models/Appointments";
 import { Link, useNavigate } from "react-router-dom";
 import { makeProperNoun } from "../util/VisualHelper";
 import { Owner } from "../models/Owner";
@@ -8,7 +8,7 @@ import OpenInFullIcon from '@mui/icons-material/OpenInFull';
 import CloseIcon from '@mui/icons-material/Close';
 
 interface AppointmentDisplayProps {
-  appointment: Appointments;
+  appointment: AppointmentModel;
   onClose: () => void;
 };
 

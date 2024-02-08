@@ -1,11 +1,10 @@
 import { Box, Button, FormControl, Grid, IconButton, InputAdornment, InputLabel, OutlinedInput, Paper, TextField, Typography } from "@mui/material";
 import "./pages-css/Login.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { Navigate, useNavigate } from "react-router-dom";
-import { login } from "../features/app/AppActions";
-import { selectLoggedInUser } from "../features/app/AppSlice";
+import { login } from "../util/feature-functions/Login";
 import { loggedInUserIsValid } from "../api/UsersApi";
 
 const Login: React.FC = () => {
@@ -15,9 +14,10 @@ const Login: React.FC = () => {
   const [passwordError, setPasswordError] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [invalidUserError, setInvalidUserError] = useState(false);
-  const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const loggedInUser = useAppSelector(selectLoggedInUser);
+
+  // @ts-ignore
+  const loggedInUser = globalThis.__LOGGEDINUSER__;
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -52,7 +52,7 @@ const Login: React.FC = () => {
 
   const onSubmit = (e: any) => {
     e.preventDefault();
-    dispatch(login(userName, password)).then(() => {
+    login(userName, password).then(() => {
       if (invalidUserError) {
         setInvalidUserError(false);
       }

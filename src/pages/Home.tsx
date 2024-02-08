@@ -1,8 +1,6 @@
 import { Grid, Dialog, Paper, Theme, useMediaQuery, DialogContent, DialogActions, Button, Toolbar, AppBar, IconButton, useTheme } from "@mui/material";
-import { selectLoggedInUser } from "../features/app/AppSlice";
-import { useAppSelector } from "../store/hooks";
 import ScheduleDisplay from "../components/ScheduleDisplay";
-import { Appointments } from "../models/Appointments";
+import { AppointmentModel } from "../models/Appointments";
 import { useState } from "react";
 import AppointmentDisplay from "../components/AppointmentDisplay";
 import OpenInFullIcon from '@mui/icons-material/OpenInFull';
@@ -14,9 +12,10 @@ const Home: React.FC = () => {
   const isLargerDevice = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'));
   const navigate = useNavigate();
   let theme = useTheme();
-  const loggedInUser = useAppSelector(selectLoggedInUser);
+  // @ts-ignore
+  const loggedInUser = globalThis.__LOGGEDINUSER__;
 
-  const [selectedAppointment, setSelectedAppointment] = useState<Appointments>();
+  const [selectedAppointment, setSelectedAppointment] = useState<AppointmentModel>();
   
   return (
     <MainBox>
@@ -34,7 +33,7 @@ const Home: React.FC = () => {
                 if (e === selectedAppointment) {
                   setSelectedAppointment(undefined);
                 } else {
-                  setSelectedAppointment(e as Appointments);
+                  setSelectedAppointment(e as AppointmentModel);
                 }
               }}
               selectedAppt={selectedAppointment}

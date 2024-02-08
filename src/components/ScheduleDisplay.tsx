@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import { fetchAppointmentsByUserId } from "../api/AppointmentsApi";
 import { AppointmentTooltip, Appointments, DateNavigator, DayView, MonthView, Scheduler, TodayButton, Toolbar, ViewSwitcher, WeekView } from "@devexpress/dx-react-scheduler-material-ui";
 import { AppointmentMeta, ViewState } from "@devexpress/dx-react-scheduler";
-import { useAppSelector } from "../store/hooks";
-import { selectAppointments } from "../features/appointments/AppointmentSlice";
-import { CircularProgress, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import OpenInFullIcon from '@mui/icons-material/OpenInFull';
 import { useNavigate } from "react-router-dom";
+import { getAppointments } from "../util/LocalStorage";
 
 interface ScheduleDisplayProps {
   userId?: string;
@@ -21,7 +20,6 @@ const ScheduleDisplay: React.FC<ScheduleDisplayProps> = (props) => {
   const [userSchedule, setUserSchedule] = useState<any[]>([]);
   const [appointmentMeta, setAppointmentMeta] = useState<any>(undefined);
   const [visible, setVisible] = useState(false);
-  const allAppointments = useAppSelector(selectAppointments);
   const navigate = useNavigate();
 
   const handleLoading = (tf: boolean) => {
@@ -33,7 +31,7 @@ const ScheduleDisplay: React.FC<ScheduleDisplayProps> = (props) => {
   useEffect(() => {
     handleLoading(true);
     if (userId) {
-      fetchAppointmentsByUserId(allAppointments, userId).then((schedule) => {
+      fetchAppointmentsByUserId(userId).then((schedule) => {
         if (schedule.length === 0) {
           setUserSchedule([]);
         } else {
@@ -42,7 +40,13 @@ const ScheduleDisplay: React.FC<ScheduleDisplayProps> = (props) => {
         handleLoading(false);
       })
     } else {
-      setUserSchedule(allAppointments);
+      getAppointments().then((appts) => {
+        if (appts instanceof Error) {
+          // TODO: Proper error handling
+        } else {
+          setUserSchedule(appts);
+        }
+      });
       handleLoading(false);
     }
 
