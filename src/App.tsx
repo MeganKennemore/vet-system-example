@@ -12,7 +12,7 @@ function App() {
   // @ts-ignore
   const loggedInUser = globalThis.__LOGGEDINUSER__;
   const navigate = useNavigate();
-  const { hash, pathname } = useLocation();
+  const { pathname } = useLocation();
   let parentPages = ["/home", "/patient-records", "/appointments", "/settings"];
   const [pageTitle, setPageTitle] = useState("");
   const [showBackButton, setShowBackButton] = useState(false);
