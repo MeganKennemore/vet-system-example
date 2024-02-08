@@ -3,12 +3,9 @@ import ReactDOM from 'react-dom/client';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import reportWebVitals from './reportWebVitals';
 import { CssBaseline } from '@mui/material';
-import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
-import storeItems from './store/store';
-import { BrowserRouter, HashRouter } from 'react-router-dom';
-import { PersistGate } from 'redux-persist/integration/react';
+import { HashRouter } from 'react-router-dom';
 import { getLoggedInUser } from './util/LocalStorage';
 
 const defaultTheme = createTheme();
@@ -17,8 +14,6 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-const { store, persistor } = storeItems();
-
 // @ts-ignore
 if (!globalThis.__LOGGEDINUSER__) {
   getLoggedInUser();
@@ -26,16 +21,12 @@ if (!globalThis.__LOGGEDINUSER__) {
 
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-      <ThemeProvider theme={defaultTheme}>
-        <CssBaseline />
-        <HashRouter basename="/">
-          <App />
-        </HashRouter>
-      </ThemeProvider>
-      </PersistGate>
-    </Provider>
+    <ThemeProvider theme={defaultTheme}>
+      <CssBaseline />
+      <HashRouter basename="/">
+        <App />
+      </HashRouter>
+    </ThemeProvider>
   </React.StrictMode>
 );
 
